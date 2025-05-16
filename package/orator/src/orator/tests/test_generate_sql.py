@@ -1,5 +1,6 @@
 import unittest
-from orator import generate_sql, connect_sql, describe_sql
+from orator import connect_sql, describe_sql
+from orator.tools.sql_gen_gpt import generate_sql
 
 class TestGenerateSQL(unittest.TestCase):
     def test_generate_sql_output_contains_sql(self):

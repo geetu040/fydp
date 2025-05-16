@@ -1,11 +1,11 @@
 from . import (
 	connect_sql,
 	describe_sql,
-	generate_sql,
 	parse_response,
 	execute_sql_query,
 	create_data_response,
 )
+from .sql_gen_gpt import generate_sql
 
 def pipeline(user_query, db_paths):
 
