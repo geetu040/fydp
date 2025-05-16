@@ -9,8 +9,6 @@ CKPT_NUM=10
 BASE_NAME="tuned_sql_model_lr${LR}_epochs${EPOCHS}"
 CKPT_DIR="./ckpts/$BASE_NAME"
 LOG_DIR="./train_logs/$BASE_NAME"
-# DATASET_DIR="./data/train_bird.json"
-# DATASET_DIR="./data/train_spider.json"
 DATASET_DIR="./data/train_synsql.json"
 
 accelerate launch --main_process_port 10000 --config_file $CONFIG_FILE train.py \
@@ -25,3 +23,8 @@ accelerate launch --main_process_port 10000 --config_file $CONFIG_FILE train.py 
     --output_ckpt_dir $CKPT_DIR \
     --sft_data_dir $DATASET_DIR \
     --mode sft
+    --use_lora \
+    --target_modules "q_proj,v_proj" \
+    --r 8 \
+    --lora_alpha 16 \
+    --lora_dropout 0.1

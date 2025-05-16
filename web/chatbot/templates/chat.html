@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8" />
+    <title>Chat - DataOrator</title>
+
+    <!-- Mobile Specific Metas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Bootstrap App Landing Template" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <meta name="author" content="Themefisher" />
+    <meta name="generator" content="Themefisher Small Apps Template v1.0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!-- PLUGINS CSS STYLE -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='plugins/themify-icons/themify-icons.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='plugins/slick/slick.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='plugins/slick/slick-theme.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='plugins/fancybox/jquery.fancybox.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='plugins/aos/aos.css') }}"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/chat.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/home/logo.png') }}"
+    />
+  </head>
+
+  <body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+    <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+      <div class="container">
+        <a class="navbar-brand" href="/"
+          ><img
+            src="{{ url_for('static', filename='images/home/logo.png') }}"
+            alt="logo"
+            width="70px"
+            height="70px"
+          /><span style="color: rgb(240, 220, 150)">DataOrator</span></a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home" style="color: white">Home</a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link" href="/chat">Chatbot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout" style="color: white"
+                >&larr; Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="chat-container">
+      <h2 style="color: white">Chat with SQL</h2>
+      <div class="chat-box" id="chat-box">
+        <div class="chat-row bot-row">
+          <div class="emoji">🤖</div>
+          <div class="bot-msg">
+            Hello! I'm a SQL assistant. Ask me anything about your database.
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" enctype="multipart/form-data">
+        <input
+          type="text"
+          name="message"
+          id="message"
+          placeholder="Type your query..."
+          required
+        />
+        <div class="form-row">
+          <input type="file" name="sqlfile" id="sqlfile" accept=".sql" />
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("chat-form");
+      const chatBox = document.getElementById("chat-box");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const messageInput = document.getElementById("message");
+        const fileInput = document.getElementById("sqlfile");
+        const message = messageInput.value;
+
+        const formData = new FormData();
+        formData.append("message", message);
+        if (fileInput.files.length > 0) {
+          formData.append("sqlfile", fileInput.files[0]);
+        }
+
+        chatBox.innerHTML += `
+          <div class="chat-row user-row">
+            <div class="emoji">👤</div>
+            <div class="user-msg">${message}</div>
+          </div>`;
+        messageInput.value = "";
+
+        const res = await fetch("/chat", {
+          method: "POST",
+          body: formData,
+        });
+        const data = await res.json();
+
+        chatBox.innerHTML += `
+          <div class="chat-row bot-row">
+            <div class="emoji">🤖</div>
+            <div class="bot-msg">${data.response}</div>
+          </div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      });
+    </script>
+  </body>
+</html>

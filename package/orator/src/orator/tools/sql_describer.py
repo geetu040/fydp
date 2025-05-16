@@ -1,5 +1,15 @@
+import sqlite3
 
-def describe_sql(db_connection):
+def describe_sql(db_connection: sqlite3.Cursor) -> str:
+	"""
+	Describes the schema of all tables in the connected SQLite database.
+
+	Args:
+		db_connection (sqlite3.Cursor): SQLite database cursor.
+
+	Returns:
+		str: Text description of the schema.
+	"""
 	schema_str = ""
 
 	db_connection.execute("SELECT name FROM sqlite_master WHERE type='table';")

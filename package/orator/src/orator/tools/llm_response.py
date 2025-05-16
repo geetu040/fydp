@@ -1,8 +1,20 @@
 from openai import OpenAI
+from typing import List, Optional, Tuple, Any
 
 client = OpenAI()
 
-def create_data_response(user_query, data, relevant_docs=None):
+def create_data_response(user_query: str, data: Any, relevant_docs: Optional[List[str]] = None) -> str:
+    """
+    Creates a natural language response from SQL data and optional relevant documents.
+
+    Args:
+        user_query (str): The original question from the user.
+        data (Any): Data returned from the database.
+        relevant_docs (Optional[List[str]]): List of related documents for RAG.
+
+    Returns:
+        str: A generated response string in natural language.
+    """
     data = str(data)[:1000]
     relevant_docs = "\n".join(relevant_docs) if relevant_docs is not None else ""
 

@@ -4,10 +4,10 @@ import torch
 
 if __name__ == "__main__":
     model = AutoModelForCausalLM.from_pretrained(
-        "Qwen/Qwen2.5-Coder-32B-Instruct", 
+        "Qwen/Qwen2.5-Coder-7B-Instruct", 
         torch_dtype = torch.bfloat16
     )
-    tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-Coder-32B-Instruct")
+    tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-Coder-7B-Instruct")
     print(model.dtype)
 
     peft_model_id = "your_lora_weight_path"

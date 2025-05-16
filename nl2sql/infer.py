@@ -6,7 +6,7 @@ from transformers import AutoTokenizer
 
 def parse_response(response):
     pattern = r"```sql\s*(.*?)\s*```"
-    
+
     sql_blocks = re.findall(pattern, response, re.DOTALL)
 
     if sql_blocks:
@@ -32,29 +32,7 @@ if __name__ == '__main__':
     input_dataset = json.load(open(opt.input_file))
     tokenizer = AutoTokenizer.from_pretrained(opt.pretrained_model_name_or_path, trust_remote_code=True)
     
-    if "Qwen2.5-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [151645] # 151645 is the token id of <|im_end|> (end of turn token in Qwen2.5)
-    elif "deepseek-coder-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [32021]
-    elif "DeepSeek-Coder-V2" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [100001]
-    elif "OpenCoder-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [96539]
-    elif "Meta-Llama-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [128009, 128001]
-    elif "granite-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [0] # <|end_of_text|> is the end token of granite-3.1 and granite-code
-    elif "starcoder2-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [0] # <|end_of_text|> is the end token of starcoder2
-    elif "Codestral-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [2]
-    elif "Mixtral-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [2]
-    elif "OmniSQL-" in opt.pretrained_model_name_or_path:
-        stop_token_ids = [151645] # OmniSQL uses the same tokenizer as Qwen2.5
-    else:
-        print("Use Qwen2.5's stop tokens by default.")
-        stop_token_ids = [151645]
+    stop_token_ids = [151645]
 
     print("stop_token_ids:", stop_token_ids)
     

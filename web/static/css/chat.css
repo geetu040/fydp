@@ -1,0 +1,133 @@
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* height: 100vh; */
+  /* margin: 0; */
+}
+
+.chat-container {
+  width: 700px;
+  padding: 20px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #3a3a3a;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  height: 400px;
+  overflow-y: auto;
+  background-color: #3a3a3a;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.chat-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.chat-row .emoji {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.user-row {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.user-row .emoji {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.user-msg {
+  background: #007bff;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  max-width: 75%;
+  overflow-wrap: anywhere;
+}
+
+.bot-msg {
+  background: #555;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  max-width: 75%;
+  overflow-wrap: anywhere;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #444;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="file"],
+button {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  background: linear-gradient(45deg, #00f0ff, #007cfc);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #00cccc;
+}
+
+.chat-box::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-box {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

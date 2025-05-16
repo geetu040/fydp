@@ -13,7 +13,6 @@ from accelerate.utils import set_seed
 from accelerate import Accelerator
 from torch.utils.tensorboard import SummaryWriter
 from peft import LoraConfig, TaskType, get_peft_model, AutoPeftModelForCausalLM
-from monkey_patch_packing import monkey_patch_packing_for_model
 
 '''
 Training LLM using Huggingface Accelerate + Deepspeed.
@@ -92,9 +91,6 @@ def train(opt):
     accelerator.print("tokens per batch:", total_batch_size * opt.block_size)
     accelerator.print("sequences per batch:", total_batch_size)
     accelerator.print("using LLM from:", opt.pretrained_model_name_or_path)
-
-    # packing inputs without cross-contamination attention (must use flash attention)
-    monkey_patch_packing_for_model(opt.pretrained_model_name_or_path)
 
     tokenizer = AutoTokenizer.from_pretrained(opt.pretrained_model_name_or_path, trust_remote_code=True)
     if tokenizer.pad_token_id is None:

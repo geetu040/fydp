@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp - DataOrator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/home/logo.png') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form method="POST" action="{{ url_for('auth.signup') }}">
+        <h2>SignUp</h2>
+        <div class="input-field">
+          <input type="text" required name="username" />
+          <label>Enter your username</label>
+        </div>
+        <div class="input-field">
+          <input type="text" required name="email" />
+          <label>Enter your email</label>
+        </div>
+        <div class="input-field">
+          <input type="password" required name="password" />
+          <label>Enter your password</label>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember" />
+            <p>Remember me</p>
+          </label>
+        </div>
+        <button type="submit">Sign Up</button>
+        <div class="register">
+          <p>
+            Instead
+            <a href="{{ url_for('auth.login') }}">Login</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<!-- {% extends 'base.html' %} {% block title %}Signup{% endblock %} {% block content
+%}
+<h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+<form method="post" class="space-y-4">
+  <input
+    type="text"
+    name="username"
+    placeholder="Username"
+    class="w-full border p-2 rounded"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    class="w-full border p-2 rounded"
+    required
+  />
+  <input
+    type="password"
+    name="password"
+    placeholder="Password"
+    class="w-full border p-2 rounded"
+    required
+  />
+  <button class="bg-blue-600 text-white px-4 py-2 rounded">Register</button>
+</form>
+{% endblock %} -->

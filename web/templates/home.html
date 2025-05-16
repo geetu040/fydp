@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Home - DataOrator</title>
+      
+        <!-- Mobile Specific Metas -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Bootstrap App Landing Template">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+        <meta name="author" content="Themefisher">
+        <meta name="generator" content="Themefisher Small Apps Template v1.0">
+      
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+      
+        <!-- PLUGINS CSS STYLE -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/themify-icons/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick/slick.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick/slick-theme.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fancybox/jquery.fancybox.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/aos/aos.css') }}">
+        <link
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='images/home/logo.png') }}"
+      />
+      
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+      
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='images/home/logo.png') }}" alt="logo" width="70px" height="70px"><span style="color:rgb(240, 220, 150);">DataOrator</span></a>
+    <!-- <img  alt="footer-logo"> -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ti-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chat" style="color: white;">Chatbot</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout" style="color: white;">&larr; Logout</a>        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--====================================
+=            Hero Section            =
+=====================================-->
+<section class="section gradient-banner">
+	<div class="shapes-container">
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="500"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="0"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-6 order-2 order-md-1 text-center text-md-left">
+                <h1 class="typing-effect" style="color: white;">DataOrator—Chat with Data Instantly..</h1>
+
+                <p class="text-white mb-5" style="color: wheat;"> Dataorator lets you effortlessly connect to SQL databases and interact using a fine-tuned language model for seamless chat functionality.</p>
+				<a href="/chat" class="btn btn-main-md">Let's Chat </a>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!--====  End of Hero Section  ====-->
+
+<section class="section pt-0 position-relative pull-top">
+	<div class="container">
+		<div class="rounded shadow p-5 bg-white">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="ti-paint-bucket text-primary h1"></i>
+					<h3 class="mt-4 text-capitalize h5 ">themes made easy</h3>
+					<p class="regular text-muted">Effortlessly connect to SQL databases and chat with your data using our intuitive themes and fine-tuned LLM.</p>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="ti-shine text-primary h1"></i>
+					<h3 class="mt-4 text-capitalize h5 ">powerful design</h3>
+					<p class="regular text-muted">Ask natural language questions and get clear answers directly from your SQL databases with our powerful LLM.</p>
+				</div>
+				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+					<i class="ti-thought text-primary h1"></i>
+					<h3 class="mt-4 text-capitalize h5 ">creative content</h3>
+					<p class="regular text-muted">Generate reports and summaries from your data through engaging conversations. Let your data tell its story.
+                    </p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--==================================
+=            Feature Grid            =
+===================================-->
+<section class="feature section pt-0 bg" >
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 ml-auto justify-content-center">
+				<!-- Feature Mockup -->
+				<!-- <div class="image-content" data-aos="fade-right"> -->
+                    <img class="img-fluid fade-right-on-scroll" src="{{ url_for('static', filename='images/home/sql.png') }}" alt="sql" style="margin-top:30px; transform: translateX(-100px);;" >
+
+				<!-- </div> -->
+			</div>
+			<div class="col-lg-6 mr-auto align-self-center">
+				<div class="feature-content">
+					<!-- Feature Title -->
+					<h2 style="color: white;">Unlock Your Data's Potential with Dataorator</h2>
+					<!-- Feature Description -->
+					<p class="desc">Dataorator transforms the way you interact with databases. Whether you're a business analyst, developer, or data scientist — simply connect your SQL database and start chatting with your data instantly. No queries, no dashboards — just answers.</p>
+				</div>
+				<!-- Testimonial Quote -->
+				<div class="testimonial">
+					<p style="color: grey;"><i>
+                        "Dataorator has become the fastest way for your team to extract insights — no SQL, no delay, just results."
+					</i></p>
+
+				</div>
+			</div>
+		</div>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+			<div class="col-lg-6 ml-auto align-self-center">
+				<div class="feature-content">
+					<!-- Feature Title -->
+					<h2 style="color: white;">Intelligent SQL Assistant Powered by LLM & RAG                    </h2>
+					<!-- Feature Description -->
+					<p>Dataorator integrates a fine-tuned Large Language Model (LLM) with Retrieval-Augmented Generation (RAG) to create a smart SQL chatbot. It not only understands natural language but also dynamically writes accurate SQL queries to retrieve relevant information from your databases — bridging the gap between technical complexity and user simplicity.                    </p>
+				</div>
+			</div>
+			<div class="col-lg-6 mr-auto justify-content-center">
+				<!-- Feature mockup -->
+                    <img class="img-fluid fade-right-on-scroll" src="{{ url_for('static', filename='images/home/chatbot.png') }}" alt="sql" style="margin-top:30px; transform: translateX(10px);;" >
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Feature Grid  ====-->
+
+<!--==============================
+=            Services            =
+===============================-->
+<section class="service section bg-gray">
+	<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title">
+					<h2>Understand Your Data</h2>
+					<p>DataOrator provides a simple interface to explore your data insights. No late tasks, no gimmicks – just clear understanding.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-lg-5 mr-auto align-self-center" style="margin: 0 auto;">
+				<div class="service-box">
+					<div class="row align-items-center">
+						<div class="col-md-6 col-xs-12">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-bookmark"></i>
+								<!-- Heading -->
+								<h3>Easy Prototyping</h3>
+								<!-- Description -->
+								<p>Rapidly prototype data interactions with our SQL chatbot, powered by a fine-tuned LLM and RAG for intelligent data retrieval.                                </p>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-pulse"></i>
+								<!-- Heading -->
+								<h3>Sensor Bridge</h3>
+								<!-- Description -->
+								<p>Seamlessly bridge the gap between your questions and SQL databases. Our chatbot understands natural language and writes SQL queries for you.</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-bar-chart"></i>
+								<!-- Heading -->
+								<h3>Strategist</h3>
+								<!-- Description -->
+								<p>Strategize with data like never before. Our LLM and RAG deliver insightful answers and facilitate deep data exploration through conversation.</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-panel"></i>
+								<!-- Heading -->
+								<h3>Art Direction</h3>
+								<!-- Description -->
+								<p>Directly access and retrieve the data you need with the art of conversation. Our SQL chatbot crafts precise queries for accurate results.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+          <div class="block">
+            <!-- Social Site Icons -->
+            <ul class="social-icon list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com"><i class="ti-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com"><i class="ti-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Quick Links</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="/chat">Chatbot</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Resources</h6>
+            <!-- links -->
+            <ul>
+              <li><a>Favourites</a></li>
+              <li><a>Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Company</h6>
+            <!-- links -->
+            <ul>
+              <li><a>Career</a></li>
+              <li><a>Investor</a></li>
+              <li><a>Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Contact</h6>
+            <!-- links -->
+            <ul>
+              <li><a>About</a></li>
+              <li><a>Contact</a></li>
+              <li><a>Team</a></li>
+              <li><a>Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-dark py-4">
+    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://github.com/geetu040/fydp">DataOrator Team</a></small class="text-secondary">
+  </div>
+</footer>
+
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+  <script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+  <script src="plugins/aos/aos.js"></script>
+  <!-- google map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+  <script src="plugins/google-map/gmap.js"></script>
+  
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll('.fade-right-on-scroll');
+  
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+  
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+  
+</body>
+
+</html>
